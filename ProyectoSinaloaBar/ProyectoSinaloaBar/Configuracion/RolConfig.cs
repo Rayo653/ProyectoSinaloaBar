@@ -16,6 +16,14 @@ namespace ProyectoSinaloaBar.Configuracion
             builder.HasKey(c=> c.IdRol);
             builder.Property(p => p.IdRol).ValueGeneratedOnAdd();
 
+
+            builder.Property(p => p.Nombre)
+           .HasMaxLength(20)
+           .IsRequired();
+
+            builder.Property(p => p.Estado)
+               .IsRequired();
+
         }
 
     }
