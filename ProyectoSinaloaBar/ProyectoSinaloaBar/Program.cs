@@ -1,9 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using ProyectoSinaloaBar.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+builder.Services.AddDbContext<ProyectoSinaloaBarContext>(options =>
+        options.UseMySql(builder.Configuration.GetConnectionString("conexion"),
+        Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.24-mariadb")));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

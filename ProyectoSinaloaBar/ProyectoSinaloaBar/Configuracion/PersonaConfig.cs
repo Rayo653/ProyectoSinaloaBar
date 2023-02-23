@@ -36,13 +36,13 @@ namespace ProyectoSinaloaBar.Configuracion
 
             builder.Property(c => c.Estado).HasDefaultValue(false);
 
-            //builder.HasOne(c => c.TipoDocumento)
-            //       .WithMany()
-            //       .HasForeignKey(c => c.FkTdoc);
+            builder.HasOne(c => c.TipoDocumento)
+                   .WithMany()
+                   .HasForeignKey(c => c.FkTdoc);
 
-            //builder.HasOne(c => c.Rol)
-            //       .WithMany()
-            //       .HasForeignKey(c => c.FkRol);
+            builder.HasOne(c => c.Rol)
+                   .WithMany()
+                   .HasForeignKey(c => c.FkRol);
         }
     }
 }

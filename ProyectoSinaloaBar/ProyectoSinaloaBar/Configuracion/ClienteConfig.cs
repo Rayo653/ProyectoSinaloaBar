@@ -12,9 +12,9 @@ namespace ProyectoSinaloaBar.Configuracion
 
             builder.HasKey(c => c.IdCliente);
 
-            //builder.HasOne(c => c.Persona)
-            //       .WithOne()
-            //       .HasForeignKey<Cliente>(c => c.IdPersona);
+            builder.HasOne(c => c.Persona)
+                   .WithOne()
+                   .HasForeignKey<Cliente>(c => c.IdPersona);
         }
     }
 }
